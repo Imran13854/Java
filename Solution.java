@@ -1,32 +1,44 @@
-import java.util.Scanner;
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-public class Solution 
-{
-    public static void main(String[] args)
-    {
-        Scanner input = new Scanner(System.in);
-        int lines = 1;
-         try{
-        String line = input.nextLine();
-        System.out.println(lines + " " + line);
-        while (true)
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        if(N%2==0)
         {
-             lines++; 
-            
-             line = input.nextLine();
-             if(line.equals("EOF")){
-                break;
+            if(N>=2 && N<5)
+            {
+                System.out.println("Not Weird");
             }
-            else{
-            System.out.println(lines + " " + line);
-                }
-             }
-         }
-             catch(Exception e){
-                 e.printStackTrace();
-             } 
-        
-        input.close();
+            else if(N>=6 && N<=20)
+            {
+                System.out.println("Weird");
+            }
+
+            else
+            {
+                System.out.println("Not Weird");
+            }
+
+        }
+
+        else
+        {
+            System.out.println("Weird");
+        }
+
+
+        scanner.close();
     }
 }
-
